@@ -1,0 +1,17 @@
+.sidebar {
+  width: 117px;
+  height: 100vh;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.text {
+  color: white;
+  font-size: 12px;
+  transform: rotate(-90deg);
+  margin-top: 40px;
+}

@@ -5,11 +5,12 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 87px 0 28px;
+  gap: 49px;
 }
 
 .navlinks {
   display: flex;
-  gap: 226px;
+  gap: 126px;
 }
 
 .navbar a {

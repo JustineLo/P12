@@ -1,0 +1,9 @@
+.container {
+  background-color: white;
+  padding: 14px;
+  border-radius: 6px;
+}
+
+.container img {
+  width: 32px;
+}
