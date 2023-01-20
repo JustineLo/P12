@@ -12,9 +12,11 @@ const Sidebar = () => {
   return (
     <>
       <div className={styles.sidebar}>
-        {icons.map((icon, index) => (
-          <Icon img={icon} color="#fff" size="30px" key={index} />
-        ))}
+        <div className={styles.icons}>
+          {icons.map((icon, index) => (
+            <Icon img={icon} color="#fff" size="30px" key={index} />
+          ))}
+        </div>
         <p className={styles.text}>{text}</p>
       </div>
     </>

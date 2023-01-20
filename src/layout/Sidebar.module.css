@@ -9,9 +9,16 @@
   justify-content: center;
 }
 
+.icons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 .text {
   color: white;
   font-size: 12px;
   transform: rotate(-90deg);
-  margin-top: 40px;
+  padding-right: 200px;
+  width: 138px;
 }
