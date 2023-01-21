@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Home.module.css";
 import { fetchData } from "../utils";
+import Header from "../components/Header";
 
 const Home = () => {
   const [user, setUser] = useState({});
@@ -13,7 +14,11 @@ const Home = () => {
     fetch();
   }, []);
 
-  return <>{user.firstName}</>;
+  return (
+    <>
+      <Header name={user.firstName} />
+    </>
+  );
 };
 
 export default Home;
