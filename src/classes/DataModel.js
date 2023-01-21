@@ -1,18 +1,14 @@
 class DataModel {
   constructor(data) {
     this.id = data.id;
-    this.userInfos = {
-      firstName: data.userInfos.firstName,
-      lastName: data.userInfos.lastName,
-      age: data.userInfos.age,
-    };
-    todayScore: data.todayScore;
-    this.keyData = {
-      calorieCount: data.keyData.calorieCount,
-      proteinCount: data.keyData.proteinCount,
-      carbonhydrateCount: data.keyData.carbonhydrateCount,
-      lipidCount: data.keyData.lipidCount,
-    };
+    this.firstName = data.userInfos.firstName;
+    this.lastName = data.userInfos.lastName;
+    this.age = data.userInfos.age;
+    this.todayScore = data.todayScore;
+    this.calorieCount = data.keyData.calorieCount;
+    this.proteinCount = data.keyData.proteinCount;
+    this.carbohydrateCount = data.keyData.carbohydrateCount;
+    this.lipidCount = data.keyData.lipidCount;
   }
 
   getId() {
@@ -51,3 +47,5 @@ class DataModel {
     return this.keyData.lipidCount;
   }
 }
+
+export default DataModel;
