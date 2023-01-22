@@ -1,5 +1,5 @@
 import Layout from "./layout/Layout";
-import Home from "./view/Home";
+import Home from "./Home/Home";
 
 function App() {
   return (

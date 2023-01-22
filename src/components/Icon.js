@@ -4,8 +4,13 @@ import styles from "./Icon.module.css";
 const Icon = ({ img, color, size }) => {
   return (
     <>
-      <div className={styles.container}>
-        <img src={img} alt="icon" style={{ color: color, width: size }} />
+      <div
+        className={styles.container}
+        style={{
+          backgroundColor: color ? color : "white",
+        }}
+      >
+        <img src={img} alt="icon" style={{ width: size }} />
       </div>
     </>
   );
