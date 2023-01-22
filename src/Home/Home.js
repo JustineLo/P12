@@ -26,34 +26,7 @@ const Home = () => {
       <div className={styles.body}>
         <div className={styles.leftCol}>left</div>
         <div className={styles.rightCol}>
-          <Count
-            icon={energy}
-            color="var(--red)"
-            name="Calories"
-            quantity={user.calorieCount}
-            unit="kcal"
-          />
-          <Count
-            icon={chicken}
-            color="var(--blue)"
-            name="Calories"
-            quantity={user.calorieCount}
-            unit="kcal"
-          />
-          <Count
-            icon={apple}
-            color="var(--yellow)"
-            name="Calories"
-            quantity={user.calorieCount}
-            unit="kcal"
-          />
-          <Count
-            icon={cheeseburger}
-            color="var(--pink)"
-            name="Calories"
-            quantity={user.calorieCount}
-            unit="kcal"
-          />
+          <KeyData />
         </div>
       </div>
     </div>
