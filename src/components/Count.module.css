@@ -7,6 +7,12 @@
   border-radius: 5px;
 }
 
+.infos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .quantity {
   font-weight: 700;
   font-size: 20px;
@@ -14,6 +20,6 @@
 
 .name {
   color: rgba(116, 121, 140, 1);
-  font-weight: 500;
+  font-weight: 600;
   font-size: 14px;
 }
