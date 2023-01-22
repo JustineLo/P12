@@ -5,7 +5,7 @@ import cheeseburger from "../assets/cheeseburger.png";
 import chicken from "../assets/chicken.png";
 import energy from "../assets/energy.png";
 import Count from "../components/Count";
-import { fetchData } from "../utils";
+import { fetchUserData } from "../utils";
 
 const KeyData = ({}) => {
   const [data, setData] = useState({});
@@ -43,7 +43,7 @@ const KeyData = ({}) => {
 
   useEffect(() => {
     const fetch = async () => {
-      const data = await fetchData();
+      const data = await fetchUserData();
       setData(data);
     };
     fetch();

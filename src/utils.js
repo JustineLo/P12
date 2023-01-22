@@ -1,12 +1,26 @@
 import axios from "axios";
-import DataModel from "./classes/DataModel";
+import ActivityModel from "./classes/ActivityModel";
+import UserModel from "./classes/UserModel";
 
-export async function fetchData() {
+export async function fetchUserData() {
   return axios
     .get("http://localhost:3000/user/12/")
     .then(function (response) {
-      const user = new DataModel(response.data.data);
+      const user = new UserModel(response.data.data);
       return user;
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+}
+
+export async function fetchActivityData() {
+  return axios
+    .get("http://localhost:3000/user/12/activity")
+    .then(function (response) {
+      const activity = new ActivityModel(response.data.data.sessions);
+      console.log(response.data.data.sessions);
+      return activity;
     })
     .catch(function (error) {
       console.log(error);

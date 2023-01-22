@@ -1,20 +1,16 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Home.module.css";
-import { fetchData } from "../utils";
+import { fetchUserData } from "../utils";
 import Header from "../components/Header";
 import KeyData from "./KeyData";
-import apple from "../assets/apple.png";
-import cheeseburger from "../assets/cheeseburger.png";
-import chicken from "../assets/chicken.png";
-import energy from "../assets/energy.png";
-import Count from "../components/Count";
+import Activity from "./Activity";
 
 const Home = () => {
   const [user, setUser] = useState({});
 
   useEffect(() => {
     const fetch = async () => {
-      const data = await fetchData();
+      const data = await fetchUserData();
       setUser(data);
     };
     fetch();
@@ -24,10 +20,10 @@ const Home = () => {
     <div className={styles.home}>
       <Header name={user.firstName} />
       <div className={styles.body}>
-        <div className={styles.leftCol}>left</div>
-        <div className={styles.rightCol}>
-          <KeyData />
+        <div className={styles.leftCol}>
+          <Activity />
         </div>
+        <KeyData />
       </div>
     </div>
   );
