@@ -18,8 +18,7 @@ export async function fetchActivityData() {
   return axios
     .get("http://localhost:3000/user/12/activity")
     .then(function (response) {
-      const activity = new ActivityModel(response.data.data.sessions);
-      console.log(response.data.data.sessions);
+      const activity = new ActivityModel(response.data.data);
       return activity;
     })
     .catch(function (error) {

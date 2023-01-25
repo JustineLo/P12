@@ -17,7 +17,7 @@ const Activity = () => {
   useEffect(() => {
     const fetch = async () => {
       const data = await fetchActivityData();
-      setActivity(data);
+      setActivity(data.sessions);
     };
     fetch();
   }, []);
