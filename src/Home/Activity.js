@@ -4,6 +4,7 @@ import {
   BarChart,
   CartesianGrid,
   Legend,
+  ResponsiveContainer,
   Tooltip,
   XAxis,
   YAxis,
@@ -23,17 +24,37 @@ const Activity = () => {
   }, []);
 
   return (
-    <>
+    <div className={styles.activity}>
+      <div className={styles.header}>
+        <h3>Activité quotidienne</h3>
+        <div className={styles.legend}>
+          <div className={styles.legendContent}>
+            <div className={styles.legendBlackDot} />
+            <p>Poids (kg)</p>
+          </div>
+          <div className={styles.legendContent}>
+            <div className={styles.legendRedDot} />
+            <p>Calories (kCal)</p>
+          </div>
+        </div>
+      </div>
       <BarChart width={730} height={250} data={activity}>
         <CartesianGrid
           strokeDasharray="2 2"
           horizontal={true}
           vertical={false}
         />
-        <XAxis dataKey="name" tickLine={false} />
+        <XAxis dataKey="index" tickLine={false} axisLine={false} />
         <YAxis orientation="right" tickLine={false} axisLine={false} />
-        <Tooltip />
-        <Legend />s
+        <Tooltip
+          itemStyle={{ color: "white" }}
+          wrapperStyle={{ border: "none", outline: "none" }}
+          contentStyle={{
+            backgroundColor: "red",
+            color: "white",
+          }}
+        />
+
         <Bar
           dataKey="kilogram"
           fill="var(--dark-grey)"
@@ -47,7 +68,7 @@ const Activity = () => {
           barSize={10}
         />
       </BarChart>
-    </>
+    </div>
   );
 };
 

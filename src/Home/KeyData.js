@@ -51,9 +51,10 @@ const KeyData = ({}) => {
 
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: "39px" }}>
-      {counts.map((count) => {
+      {counts.map((count, index) => {
         return (
           <Count
+            key={index}
             icon={count.icon}
             color={count.color}
             name={count.name}

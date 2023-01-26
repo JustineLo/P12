@@ -1,0 +1,34 @@
+.activity {
+  background-color: var(--bg-light);
+  padding: 24px 26px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.legend {
+  display: flex;
+}
+
+.legendContent {
+  display: flex;
+  align-items: center;
+}
+
+.legendBlackDot {
+  background-color: black;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  margin-right: 5px;
+}
+
+.legendRedDot {
+  background-color: var(--primary);
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  margin-right: 5px;
+}
