@@ -5,14 +5,18 @@ import Header from "../components/Header";
 import KeyData from "./KeyData";
 import Activity from "./Activity";
 import AverageSessions from "./AverageSessions";
+import Performance from "./Performance";
+import Score from "./Score";
 
 const Home = () => {
   const [user, setUser] = useState({});
+  const [score, setScore] = useState([]);
 
   useEffect(() => {
     const fetch = async () => {
       const data = await fetchUserData();
       setUser(data);
+      setScore([{ score: data.score }]);
     };
     fetch();
   }, []);
@@ -25,6 +29,8 @@ const Home = () => {
           <Activity />
           <div className={styles.stats}>
             <AverageSessions />
+            <Performance />
+            <Score score={score} />
           </div>
         </div>
         <KeyData />
