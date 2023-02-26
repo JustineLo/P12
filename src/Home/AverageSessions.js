@@ -21,6 +21,22 @@ const AverageSessions = () => {
     fetch();
   }, []);
 
+  const ActiveDot = (props) => {
+    const { cx } = props;
+
+    return (
+      <>
+        <rect
+          x={cx}
+          y="0"
+          width="25000"
+          height="25000"
+          fill="var(--primary-dark)"
+        />
+      </>
+    );
+  };
+
   return (
     <>
       <div
@@ -51,6 +67,7 @@ const AverageSessions = () => {
             strokeWidth={2}
             fillOpacity={1}
             fill="none"
+            activeDot={<ActiveDot />}
           />
         </AreaChart>
       </div>
