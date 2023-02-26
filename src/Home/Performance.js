@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Legend, PolarAngleAxis, PolarGrid, Radar, RadarChart } from "recharts";
+import { PolarAngleAxis, PolarGrid, Radar, RadarChart } from "recharts";
 import { fetchPerformanceData } from "../utils";
 
 const Performance = () => {
@@ -9,7 +9,7 @@ const Performance = () => {
   useEffect(() => {
     const fetch = async () => {
       const data = await fetchPerformanceData();
-      setKind(data);
+      setKind(data.kind);
       setPerformancesData(data.data);
     };
     fetch();
@@ -29,17 +29,14 @@ const Performance = () => {
           width={250}
           height={250}
           data={performancesData}
+          legend={false}
         >
-          <PolarGrid stroke="white" />
-          <PolarAngleAxis dataKey="kind" />
-          <Radar
-            name="Mike"
-            dataKey="value"
-            fill="var(--primary)"
-            fillOpacity={0.6}
+          <PolarGrid stroke="white" radialLines={false} />
+          <PolarAngleAxis
+            dataKey="kind"
+            tickFormatter={(index) => kind[index]}
           />
-
-          <Legend />
+          <Radar dataKey="kind" fill="var(--primary)" fillOpacity={0.6} />
         </RadarChart>
       </div>
     </>

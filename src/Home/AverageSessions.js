@@ -2,11 +2,7 @@ import React, { useEffect, useState } from "react";
 import {
   Area,
   AreaChart,
-  Bar,
-  BarChart,
   CartesianGrid,
-  Legend,
-  ResponsiveContainer,
   Tooltip,
   XAxis,
   YAxis,
@@ -15,6 +11,7 @@ import { fetchAverageSessionsData } from "../utils";
 
 const AverageSessions = () => {
   const [sessions, setSessions] = useState([]);
+  const dayOfWeek = ["L", "M", "M", "J", "V", "S", "D"];
 
   useEffect(() => {
     const fetch = async () => {
@@ -34,9 +31,18 @@ const AverageSessions = () => {
         }}
       >
         <AreaChart width={250} height={250} data={sessions}>
-          <XAxis dataKey="day" axisLine={false} tickLine={false} />
+          <XAxis
+            dataKey="day"
+            axisLine={false}
+            tickLine={false}
+            tickFormatter={(value, index) => dayOfWeek[index]}
+          />
           <YAxis hide />
-          <CartesianGrid strokeDasharray="3 3" />
+          <CartesianGrid
+            strokeDasharray="3 3"
+            horizontal={false}
+            vertical={false}
+          />
           <Tooltip />
           <Area
             type="monotone"

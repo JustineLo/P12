@@ -5,7 +5,7 @@ class UserModel {
     this.lastName = data.userInfos.lastName;
     this.userInfos = data.userInfos;
     this.age = data.userInfos.age;
-    this.score = data.score;
+    this.score = data.score || data.todayScore;
     this.keyData = data.keyData;
     this.calorieCount = data.keyData.calorieCount;
     this.proteinCount = data.keyData.proteinCount;
