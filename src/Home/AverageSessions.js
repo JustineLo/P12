@@ -43,7 +43,6 @@ const AverageSessions = () => {
         style={{
           backgroundColor: "var(--primary)",
           width: "fit-content",
-          padding: "20px",
         }}
       >
         <AreaChart width={250} height={250} data={sessions}>
@@ -51,7 +50,7 @@ const AverageSessions = () => {
             dataKey="day"
             axisLine={false}
             tickLine={false}
-            tickFormatter={(value, index) => dayOfWeek[index]}
+            tickFormatter={(value) => dayOfWeek[value - 1]}
           />
           <YAxis hide />
           <CartesianGrid

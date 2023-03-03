@@ -13,6 +13,7 @@ export async function fetchUserData() {
     })
     .catch(function (error) {
       console.log(error);
+      throw error;
     });
 }
 
