@@ -35,7 +35,12 @@ const Activity = () => {
           horizontal={true}
           vertical={false}
         />
-        <XAxis dataKey="index" tickLine={false} axisLine={false} />
+        <XAxis
+          dataKey="sessions"
+          tickLine={false}
+          axisLine={false}
+          tickFormatter={(value, index) => index + 1}
+        />
         <YAxis orientation="right" tickLine={false} axisLine={false} />
         <Tooltip
           itemStyle={{ color: "white" }}

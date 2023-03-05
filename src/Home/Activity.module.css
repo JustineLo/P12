@@ -1,6 +1,8 @@
 .activity {
   background-color: var(--bg-light);
   padding: 24px 26px;
+  border-radius: 5px;
+  width: 835px;
 }
 
 .header {
