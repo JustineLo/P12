@@ -8,6 +8,7 @@ import {
   YAxis,
 } from "recharts";
 import { fetchAverageSessionsData } from "../utils";
+import styles from "./AverageSessions.module.css";
 
 const AverageSessions = () => {
   const [sessions, setSessions] = useState([]);
@@ -20,6 +21,19 @@ const AverageSessions = () => {
     };
     fetch();
   }, []);
+
+  const TooltipContent = (props) => {
+    const { active, payload } = props;
+    return (
+      <>
+        {active && payload && payload.length && (
+          <div className={styles.tooltip}>
+            <p>{payload[0].payload.sessionLength} min</p>
+          </div>
+        )}
+      </>
+    );
+  };
 
   const ActiveDot = (props) => {
     const { cx } = props;
@@ -38,39 +52,39 @@ const AverageSessions = () => {
   };
 
   return (
-    <>
-      <div
-        style={{
-          backgroundColor: "var(--primary)",
-          width: "fit-content",
-        }}
+    <div className={styles.chartcontainer}>
+      <h3>Durée moyenne des sessions</h3>
+      <AreaChart
+        width={250}
+        height={250}
+        margin={{ top: 60, right: 20, left: 20, bottom: 5 }}
+        data={sessions}
       >
-        <AreaChart width={250} height={250} data={sessions}>
-          <XAxis
-            dataKey="day"
-            axisLine={false}
-            tickLine={false}
-            tickFormatter={(value) => dayOfWeek[value - 1]}
-          />
-          <YAxis hide />
-          <CartesianGrid
-            strokeDasharray="3 3"
-            horizontal={false}
-            vertical={false}
-          />
-          <Tooltip />
-          <Area
-            type="monotone"
-            dataKey="sessionLength"
-            stroke="white"
-            strokeWidth={2}
-            fillOpacity={1}
-            fill="none"
-            activeDot={<ActiveDot />}
-          />
-        </AreaChart>
-      </div>
-    </>
+        <XAxis
+          dataKey="day"
+          axisLine={false}
+          tickLine={false}
+          stroke="white"
+          tickFormatter={(value) => dayOfWeek[value - 1]}
+        />
+        <YAxis hide />
+        <CartesianGrid
+          strokeDasharray="3 3"
+          horizontal={false}
+          vertical={false}
+        />
+        <Tooltip content={<TooltipContent />} />
+        <Area
+          type="monotone"
+          dataKey="sessionLength"
+          stroke="white"
+          strokeWidth={2}
+          fillOpacity={1}
+          fill="none"
+          activeDot={<ActiveDot />}
+        />
+      </AreaChart>
+    </div>
   );
 };
 

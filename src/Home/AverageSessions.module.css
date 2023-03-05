@@ -1,0 +1,23 @@
+.chartcontainer {
+  width: 100%;
+  height: fit-content;
+  border-radius: 5px;
+  background-color: var(--primary);
+  padding: 0;
+}
+
+h3 {
+  font-weight: 500;
+  font-size: 15px;
+  color: white;
+  position: relative;
+  top: 50px;
+}
+
+.tooltip {
+  background-color: white;
+  padding: 5px;
+  border: none;
+  outline: none;
+  color: black;
+}
