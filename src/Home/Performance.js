@@ -22,6 +22,7 @@ const Performance = () => {
           backgroundColor: "var(--dark-grey)",
           width: "fit-content",
           padding: "20px",
+          borderRadius: "5px",
         }}
       >
         <RadarChart
