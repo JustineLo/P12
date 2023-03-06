@@ -1,0 +1,7 @@
+.score {
+  width: "fit-content";
+  height: "fit-content";
+  border-radius: "5px";
+  padding: "20px";
+  background-color: var(--bg-light);
+}

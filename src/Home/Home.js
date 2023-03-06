@@ -1,22 +1,22 @@
 import React, { useEffect, useState } from "react";
-import styles from "./Home.module.css";
-import { fetchUserData } from "../utils";
 import Header from "../components/Header";
-import KeyData from "./KeyData";
+import { fetchUserData } from "../utils";
 import Activity from "./Activity";
 import AverageSessions from "./AverageSessions";
+import styles from "./Home.module.css";
+import KeyData from "./KeyData";
 import Performance from "./Performance";
 import Score from "./Score";
 
 const Home = () => {
   const [user, setUser] = useState({});
-  const [score, setScore] = useState([]);
+  const [score, setScore] = useState(0);
 
   useEffect(() => {
     const fetch = async () => {
       const data = await fetchUserData();
       setUser(data);
-      setScore([{ score: data.score }]);
+      setScore(data.score);
     };
     fetch();
   }, []);
