@@ -5,7 +5,12 @@ import styles from "./Score.module.css";
 const Score = ({ score }) => {
   const dataScore = [{ score: score * 100 }];
   return (
-    <div className={styles.score}>
+    <div className={styles.container}>
+      <h3>Score</h3>
+      <div className={styles.score}>
+        <p className={styles.percentage}>{dataScore[0].score}%</p>
+        <p>de votre objectif</p>
+      </div>
       <RadialBarChart
         width={330}
         height={250}
@@ -22,7 +27,6 @@ const Score = ({ score }) => {
           dataKey="score"
           cornerRadius={100}
         />
-
         <Tooltip />
       </RadialBarChart>
     </div>
