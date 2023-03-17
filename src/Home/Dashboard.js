@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
+import { Link } from "react-router-dom";
 import Header from "../components/Header";
 import Layout from "../layout/Layout";
 import {
@@ -51,7 +52,10 @@ const Dashboard = () => {
   return (
     <Layout>
       {errorId ? (
-        <p>Cet identifiant n'existe pas</p>
+        <div style={{ display: "flex", flexDirection: "column" }}>
+          <p>Cet identifiant n'existe pas</p>
+          <Link to="/">Retour à l'accueil</Link>
+        </div>
       ) : (
         <div className={styles.home}>
           <Header name={user.firstName} />
