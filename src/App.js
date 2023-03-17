@@ -1,11 +1,14 @@
-import Layout from "./layout/Layout";
-import Home from "./Home/Home";
+import { Route, Routes } from "react-router";
+import Dashboard from "./Home/Dashboard";
+import Homepage from "./Home/Homepage";
 
 function App() {
   return (
-    <Layout>
-      <Home />
-    </Layout>
+    <Routes>
+      <Route path="/" element={<Homepage />} />
+      <Route path="/dashboard/:id" element={<Dashboard />} />
+      <Route path="*" element={<Homepage />} />
+    </Routes>
   );
 }
 

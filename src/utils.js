@@ -4,9 +4,9 @@ import AverageSessionsModel from "./classes/AverageSessionsModel";
 import PerformanceModel from "./classes/PerformanceModel";
 import UserModel from "./classes/UserModel";
 
-export async function fetchUserData() {
+export async function fetchUserData(id) {
   return axios
-    .get("http://localhost:3000/user/18/")
+    .get(`http://localhost:3000/user/${id}/`)
     .then(function (response) {
       const user = new UserModel(response.data.data);
       return user;
@@ -17,9 +17,9 @@ export async function fetchUserData() {
     });
 }
 
-export async function fetchActivityData() {
+export async function fetchActivityData(id) {
   return axios
-    .get("http://localhost:3000/user/18/activity")
+    .get(`http://localhost:3000/user/${id}/activity`)
     .then(function (response) {
       const activity = new ActivityModel(response.data.data);
       return activity;
@@ -29,9 +29,9 @@ export async function fetchActivityData() {
     });
 }
 
-export async function fetchAverageSessionsData() {
+export async function fetchAverageSessionsData(id) {
   return axios
-    .get("http://localhost:3000/user/18/average-sessions")
+    .get(`http://localhost:3000/user/${id}/average-sessions`)
     .then(function (response) {
       const activity = new AverageSessionsModel(response.data.data);
       return activity;
@@ -41,9 +41,9 @@ export async function fetchAverageSessionsData() {
     });
 }
 
-export async function fetchPerformanceData() {
+export async function fetchPerformanceData(id) {
   return axios
-    .get("http://localhost:3000/user/18/performance")
+    .get(`http://localhost:3000/user/${id}/performance`)
     .then(function (response) {
       const performance = new PerformanceModel(response.data.data);
       return performance;
