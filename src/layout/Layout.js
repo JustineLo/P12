@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React from "react";
 import styles from "./Layout.module.css";
 import Navbar from "./Navbar";
@@ -15,6 +16,10 @@ const Layout = ({ children }) => {
       </div>
     </>
   );
+};
+
+Layout.propTypes = {
+  children: PropTypes.object,
 };
 
 export default Layout;

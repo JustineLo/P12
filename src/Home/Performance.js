@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React from "react";
 import { PolarAngleAxis, PolarGrid, Radar, RadarChart } from "recharts";
 
@@ -30,6 +31,11 @@ const Performance = ({ kind, performancesData }) => {
       </div>
     </>
   );
+};
+
+Performance.propTypes = {
+  kind: PropTypes.object,
+  performancesData: PropTypes.array,
 };
 
 export default Performance;

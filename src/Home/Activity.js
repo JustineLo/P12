@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React from "react";
 import { Bar, BarChart, CartesianGrid, Tooltip, XAxis, YAxis } from "recharts";
 import styles from "./Activity.module.css";
@@ -55,6 +56,10 @@ const Activity = ({ activity }) => {
       </BarChart>
     </div>
   );
+};
+
+Activity.propTypes = {
+  activity: PropTypes.array,
 };
 
 export default Activity;

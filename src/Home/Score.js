@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React from "react";
 import { RadialBar, RadialBarChart, Tooltip } from "recharts";
 import styles from "./Score.module.css";
@@ -31,6 +32,10 @@ const Score = ({ score }) => {
       </RadialBarChart>
     </div>
   );
+};
+
+Score.propTypes = {
+  score: PropTypes.number,
 };
 
 export default Score;

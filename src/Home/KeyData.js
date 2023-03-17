@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React from "react";
 import apple from "../assets/apple.png";
 import cheeseburger from "../assets/cheeseburger.png";
@@ -53,6 +54,10 @@ const KeyData = ({ data }) => {
       })}
     </div>
   );
+};
+
+KeyData.propTypes = {
+  data: PropTypes.object,
 };
 
 export default KeyData;

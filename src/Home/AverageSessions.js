@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React from "react";
 import {
   Area,
@@ -100,6 +101,10 @@ const AverageSessions = ({ sessions }) => {
       </AreaChart>
     </ChartContainer>
   );
+};
+
+AverageSessions.propTypes = {
+  sessions: PropTypes.array,
 };
 
 export default AverageSessions;
