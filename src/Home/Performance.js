@@ -1,20 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { PolarAngleAxis, PolarGrid, Radar, RadarChart } from "recharts";
-import { fetchPerformanceData } from "../utils";
 
-const Performance = () => {
-  const [kind, setKind] = useState([]);
-  const [performancesData, setPerformancesData] = useState([]);
-
-  useEffect(() => {
-    const fetch = async () => {
-      const data = await fetchPerformanceData();
-      setKind(data.kind);
-      setPerformancesData(data.data);
-    };
-    fetch();
-  }, []);
-
+const Performance = ({ kind, performancesData }) => {
   return (
     <>
       <div

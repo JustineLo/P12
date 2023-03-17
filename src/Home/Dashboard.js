@@ -2,7 +2,12 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import Header from "../components/Header";
 import Layout from "../layout/Layout";
-import { fetchActivityData, fetchUserData } from "../utils";
+import {
+  fetchActivityData,
+  fetchAverageSessionsData,
+  fetchPerformanceData,
+  fetchUserData,
+} from "../utils";
 import Activity from "./Activity";
 import AverageSessions from "./AverageSessions";
 import styles from "./Dashboard.module.css";
@@ -13,6 +18,9 @@ import Score from "./Score";
 const Dashboard = () => {
   const [user, setUser] = useState({});
   const [activity, setActivity] = useState([]);
+  const [sessions, setSessions] = useState([]);
+  const [kind, setKind] = useState([]);
+  const [performancesData, setPerformancesData] = useState([]);
   const [score, setScore] = useState(0);
   const { id } = useParams();
 
@@ -20,9 +28,14 @@ const Dashboard = () => {
     const fetch = async () => {
       const userData = await fetchUserData(id);
       const activityData = await fetchActivityData(id);
+      const sessionsData = await fetchAverageSessionsData(id);
+      const performanceData = await fetchPerformanceData(id);
       setUser(userData);
       setScore(userData.score);
       setActivity(activityData.sessions);
+      setSessions(sessionsData.sessions);
+      setKind(performanceData.kind);
+      setPerformancesData(performanceData.data);
     };
     fetch();
   }, []);
@@ -35,12 +48,12 @@ const Dashboard = () => {
           <div className={styles.leftCol}>
             <Activity activity={activity} />
             <div className={styles.stats}>
-              <AverageSessions />
-              <Performance />
+              <AverageSessions sessions={sessions} />
+              <Performance kind={kind} performancesData={performancesData} />
               <Score score={score} />
             </div>
           </div>
-          <KeyData />
+          <KeyData data={user} />
         </div>
       </div>
     </Layout>

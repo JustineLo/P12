@@ -1,15 +1,11 @@
-import React, { useEffect, useState } from "react";
-import styles from "./Activity.module.css";
+import React from "react";
 import apple from "../assets/apple.png";
 import cheeseburger from "../assets/cheeseburger.png";
 import chicken from "../assets/chicken.png";
 import energy from "../assets/energy.png";
 import Count from "../components/Count";
-import { fetchUserData } from "../utils";
 
-const KeyData = ({}) => {
-  const [data, setData] = useState({});
-
+const KeyData = ({ data }) => {
   const counts = [
     {
       icon: energy,
@@ -40,14 +36,6 @@ const KeyData = ({}) => {
       unit: "g",
     },
   ];
-
-  useEffect(() => {
-    const fetch = async () => {
-      const data = await fetchUserData();
-      setData(data);
-    };
-    fetch();
-  }, []);
 
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: "39px" }}>

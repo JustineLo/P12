@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import {
   Area,
   AreaChart,
@@ -7,20 +7,10 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import { fetchAverageSessionsData } from "../utils";
 import styles from "./AverageSessions.module.css";
 
-const AverageSessions = () => {
-  const [sessions, setSessions] = useState([]);
+const AverageSessions = ({ sessions }) => {
   const dayOfWeek = ["L", "M", "M", "J", "V", "S", "D"];
-
-  useEffect(() => {
-    const fetch = async () => {
-      const data = await fetchAverageSessionsData();
-      setSessions(data.sessions);
-    };
-    fetch();
-  }, []);
 
   const TooltipContent = (props) => {
     const { active, payload } = props;
