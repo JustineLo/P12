@@ -23,39 +23,51 @@ const Dashboard = () => {
   const [performancesData, setPerformancesData] = useState([]);
   const [score, setScore] = useState(0);
   const { id } = useParams();
+  const [errorId, setErrorId] = useState(false);
 
   useEffect(() => {
-    const fetch = async () => {
-      const userData = await fetchUserData(id);
-      const activityData = await fetchActivityData(id);
-      const sessionsData = await fetchAverageSessionsData(id);
-      const performanceData = await fetchPerformanceData(id);
-      setUser(userData);
-      setScore(userData.score);
-      setActivity(activityData.sessions);
-      setSessions(sessionsData.sessions);
-      setKind(performanceData.kind);
-      setPerformancesData(performanceData.data);
-    };
-    fetch();
+    (async () => {
+      const SuperPromise = Promise.all([
+        fetchUserData(id),
+        fetchActivityData(id),
+        fetchAverageSessionsData(id),
+        fetchPerformanceData(id),
+      ]);
+      try {
+        const [userData, activityData, sessionsData, performanceData] =
+          await SuperPromise;
+        setUser(userData);
+        setScore(userData.score);
+        setActivity(activityData.sessions);
+        setSessions(sessionsData.sessions);
+        setKind(performanceData.kind);
+        setPerformancesData(performanceData.data);
+      } catch (error) {
+        setErrorId(true);
+      }
+    })();
   }, []);
 
   return (
     <Layout>
-      <div className={styles.home}>
-        <Header name={user.firstName} />
-        <div className={styles.body}>
-          <div className={styles.leftCol}>
-            <Activity activity={activity} />
-            <div className={styles.stats}>
-              <AverageSessions sessions={sessions} />
-              <Performance kind={kind} performancesData={performancesData} />
-              <Score score={score} />
+      {errorId ? (
+        <p>Cet identifiant n'existe pas</p>
+      ) : (
+        <div className={styles.home}>
+          <Header name={user.firstName} />
+          <div className={styles.body}>
+            <div className={styles.leftCol}>
+              <Activity activity={activity} />
+              <div className={styles.stats}>
+                <AverageSessions sessions={sessions} />
+                <Performance kind={kind} performancesData={performancesData} />
+                <Score score={score} />
+              </div>
             </div>
+            <KeyData data={user} />
           </div>
-          <KeyData data={user} />
         </div>
-      </div>
+      )}
     </Layout>
   );
 };

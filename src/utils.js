@@ -10,10 +10,6 @@ export async function fetchUserData(id) {
     .then(function (response) {
       const user = new UserModel(response.data.data);
       return user;
-    })
-    .catch(function (error) {
-      console.log(error);
-      throw error;
     });
 }
 
@@ -23,9 +19,6 @@ export async function fetchActivityData(id) {
     .then(function (response) {
       const activity = new ActivityModel(response.data.data);
       return activity;
-    })
-    .catch(function (error) {
-      console.log(error);
     });
 }
 
@@ -35,9 +28,6 @@ export async function fetchAverageSessionsData(id) {
     .then(function (response) {
       const activity = new AverageSessionsModel(response.data.data);
       return activity;
-    })
-    .catch(function (error) {
-      console.log(error);
     });
 }
 
@@ -47,8 +37,5 @@ export async function fetchPerformanceData(id) {
     .then(function (response) {
       const performance = new PerformanceModel(response.data.data);
       return performance;
-    })
-    .catch(function (error) {
-      console.log(error);
     });
 }

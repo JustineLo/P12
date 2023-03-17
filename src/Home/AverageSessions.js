@@ -22,7 +22,8 @@ const TooltipContainer = styled.div`
 const ChartContainer = styled.div`
   border-radius: 5px;
   background-color: var(--primary);
-  padding: 20px;
+  width: fit-content;
+  height: fit-content;
   h3 {
     font-weight: 500;
     font-size: 15px;
@@ -66,13 +67,13 @@ const AverageSessions = ({ sessions }) => {
 
   return (
     <ChartContainer>
-      <h3>Durée moyenne des sessions</h3>
       <AreaChart
         width={250}
         height={250}
-        margin={{ top: 60, right: 20, left: 20, bottom: 5 }}
         data={sessions}
+        margin={{ top: 30, bottom: 30, left: 0, right: 0 }}
       >
+        <text y="50">Durée moyenne des sessions</text>
         <XAxis
           dataKey="day"
           axisLine={false}

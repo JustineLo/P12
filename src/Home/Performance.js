@@ -8,7 +8,7 @@ const Performance = ({ kind, performancesData }) => {
         style={{
           backgroundColor: "var(--dark-grey)",
           width: "fit-content",
-          padding: "20px",
+          height: "fit-content",
           borderRadius: "5px",
         }}
       >
@@ -18,6 +18,7 @@ const Performance = ({ kind, performancesData }) => {
           height={250}
           data={performancesData}
           legend={false}
+          margin={{ top: 20, right: 20, bottom: 20, left: 20 }}
         >
           <PolarGrid stroke="white" radialLines={false} />
           <PolarAngleAxis
