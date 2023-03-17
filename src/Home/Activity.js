@@ -1,19 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Bar, BarChart, CartesianGrid, Tooltip, XAxis, YAxis } from "recharts";
-import { fetchActivityData } from "../utils";
 import styles from "./Activity.module.css";
 
-const Activity = () => {
-  const [activity, setActivity] = useState([]);
-
-  useEffect(() => {
-    const fetch = async () => {
-      const data = await fetchActivityData();
-      setActivity(data.sessions);
-    };
-    fetch();
-  }, []);
-
+const Activity = ({ activity }) => {
   return (
     <div className={styles.activity}>
       <div className={styles.header}>

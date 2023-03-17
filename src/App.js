@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router";
 import Dashboard from "./Home/Dashboard";
-import Homepage from "./Home/Homepage";
+import Homepage from "./Homepage";
 
 function App() {
   return (
