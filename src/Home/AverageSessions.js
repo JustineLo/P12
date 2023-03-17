@@ -7,7 +7,30 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import styles from "./AverageSessions.module.css";
+import styled from "styled-components";
+
+const TooltipContainer = styled.div`
+   {
+    background-color: white;
+    padding: 5px;
+    border: none;
+    outline: none;
+    color: black;
+  }
+`;
+
+const ChartContainer = styled.div`
+  border-radius: 5px;
+  background-color: var(--primary);
+  padding: 20px;
+  h3 {
+    font-weight: 500;
+    font-size: 15px;
+    color: white;
+    position: relative;
+    top: 50px;
+  }
+`;
 
 const AverageSessions = ({ sessions }) => {
   const dayOfWeek = ["L", "M", "M", "J", "V", "S", "D"];
@@ -17,9 +40,9 @@ const AverageSessions = ({ sessions }) => {
     return (
       <>
         {active && payload && payload.length && (
-          <div className={styles.tooltip}>
+          <TooltipContainer>
             <p>{payload[0].payload.sessionLength} min</p>
-          </div>
+          </TooltipContainer>
         )}
       </>
     );
@@ -42,7 +65,7 @@ const AverageSessions = ({ sessions }) => {
   };
 
   return (
-    <div className={styles.chartcontainer}>
+    <ChartContainer>
       <h3>Durée moyenne des sessions</h3>
       <AreaChart
         width={250}
@@ -74,7 +97,7 @@ const AverageSessions = ({ sessions }) => {
           activeDot={<ActiveDot />}
         />
       </AreaChart>
-    </div>
+    </ChartContainer>
   );
 };
 
