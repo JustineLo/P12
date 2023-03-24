@@ -1,19 +1,28 @@
 import PropTypes from "prop-types";
 import React from "react";
-import styles from "./Layout.module.css";
+import styled from "styled-components";
 import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const Content = styled.div`
+  display: flex;
+`;
 
 const Layout = ({ children }) => {
   return (
     <>
-      <div className={styles.layout}>
+      <Container>
         <Navbar />
-        <div className={styles.content}>
+        <Content>
           <Sidebar />
           {children}
-        </div>
-      </div>
+        </Content>
+      </Container>
     </>
   );
 };
