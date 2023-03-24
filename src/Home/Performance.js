@@ -30,7 +30,7 @@ const Performance = ({ kind, performancesData }) => {
 
 Performance.propTypes = {
   kind: PropTypes.object,
-  performancesData: PropTypes.array,
+  performancesData: PropTypes.arrayOf(PropTypes.object),
 };
 
 export default Performance;

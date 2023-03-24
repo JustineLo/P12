@@ -59,7 +59,7 @@ const Activity = ({ activity }) => {
 };
 
 Activity.propTypes = {
-  activity: PropTypes.array,
+  activity: PropTypes.arrayOf(PropTypes.object),
 };
 
 export default Activity;

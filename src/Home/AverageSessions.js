@@ -103,7 +103,7 @@ const AverageSessions = ({ sessions }) => {
 };
 
 AverageSessions.propTypes = {
-  sessions: PropTypes.array,
+  sessions: PropTypes.arrayOf(PropTypes.object),
 };
 
 export default AverageSessions;
