@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
+import styled from "styled-components";
 import Header from "../components/Header";
 import Layout from "../layout/Layout";
 import {
@@ -11,10 +12,32 @@ import {
 } from "../utils";
 import Activity from "./Activity";
 import AverageSessions from "./AverageSessions";
-import styles from "./Dashboard.module.css";
 import KeyData from "./KeyData";
 import Performance from "./Performance";
 import Score from "./Score";
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  padding: 5rem;
+`;
+
+const Body = styled.div`
+  display: grid;
+  column-gap: 2rem;
+  grid-template-columns: 3fr 1fr;
+  width: 100%;
+  height: 100%;
+`;
+
+const LeftCol = styled.div``;
+const RightCol = styled.div``;
+const Stats = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
 
 const Dashboard = () => {
   const [user, setUser] = useState({});
@@ -57,20 +80,20 @@ const Dashboard = () => {
           <Link to="/">Retour à l'accueil</Link>
         </div>
       ) : (
-        <div className={styles.home}>
+        <Container>
           <Header name={user.firstName} />
-          <div className={styles.body}>
-            <div className={styles.leftCol}>
+          <Body>
+            <LeftCol>
               <Activity activity={activity} />
-              <div className={styles.stats}>
+              <Stats>
                 <AverageSessions sessions={sessions} />
                 <Performance kind={kind} performancesData={performancesData} />
                 <Score score={score} />
-              </div>
-            </div>
+              </Stats>
+            </LeftCol>
             <KeyData data={user} />
-          </div>
-        </div>
+          </Body>
+        </Container>
       )}
     </Layout>
   );

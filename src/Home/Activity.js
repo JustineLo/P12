@@ -1,24 +1,53 @@
 import PropTypes from "prop-types";
 import React from "react";
 import { Bar, BarChart, CartesianGrid, Tooltip, XAxis, YAxis } from "recharts";
-import styles from "./Activity.module.css";
+import styled from "styled-components";
+
+const Container = styled.div`
+  background-color: var(--bg-light);
+  padding: 24px 26px;
+  border-radius: 5px;
+  width: 100%;
+`;
+
+const Header = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+const Legend = styled.div`
+  display: flex;
+`;
+
+const LegendContent = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+const Dot = styled.div`
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  margin-right: 5px;
+  background-color: ${(props) => props.color};
+`;
 
 const Activity = ({ activity }) => {
   return (
-    <div className={styles.activity}>
-      <div className={styles.header}>
+    <Container>
+      <Header>
         <h3>Activité quotidienne</h3>
-        <div className={styles.legend}>
-          <div className={styles.legendContent}>
-            <div className={styles.legendBlackDot} />
+        <Legend>
+          <LegendContent>
+            <Dot color="black" />
             <p>Poids (kg)</p>
-          </div>
-          <div className={styles.legendContent}>
-            <div className={styles.legendRedDot} />
+          </LegendContent>
+          <LegendContent>
+            <Dot color="var(--primary)" />
             <p>Calories (kCal)</p>
-          </div>
-        </div>
-      </div>
+          </LegendContent>
+        </Legend>
+      </Header>
       <BarChart width={730} height={250} data={activity}>
         <CartesianGrid
           strokeDasharray="2 2"
@@ -54,7 +83,7 @@ const Activity = ({ activity }) => {
           barSize={10}
         />
       </BarChart>
-    </div>
+    </Container>
   );
 };
 
