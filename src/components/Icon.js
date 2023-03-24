@@ -1,17 +1,26 @@
 import React from "react";
-import styles from "./Icon.module.css";
+import styled from "styled-components";
+
+const IconContainer = styled.div`
+  border-radius: 6px;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: ${(props) => props.color || "white"};
+
+  img {
+    width: ${(props) => props.imgWidth || "32px"};
+  }
+`;
 
 const Icon = ({ img, color, size }) => {
   return (
     <>
-      <div
-        className={styles.container}
-        style={{
-          backgroundColor: color ? color : "white",
-        }}
-      >
+      <IconContainer color={color} imgWidth={size}>
         <img src={img} alt="icon" style={{ width: size }} />
-      </div>
+      </IconContainer>
     </>
   );
 };
