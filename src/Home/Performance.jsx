@@ -6,7 +6,7 @@ import styled from "styled-components";
 const ChartContainer = styled.div`
   border-radius: 5px;
   background-color: var(--dark-grey);
-  width: fit-content;
+  width: 33%;
   height: fit-content;
 `;
 

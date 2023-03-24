@@ -19,28 +19,29 @@ import Score from "./Score";
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  width: 100%;
   height: 100vh;
   padding: 40px 60px;
   gap: 40px;
+  width: 1000px;
+  box-sizing: border-box;
 `;
 
 const Body = styled.div`
-  display: grid;
-  column-gap: 2rem;
-  grid-template-columns: 3fr 1fr;
-  width: 80vw;
+  display: flex;
+  gap: 5%;
+  width: 100%;
 `;
 
 const LeftCol = styled.div`
-  width: 90%;
+  width: 85%;
 `;
 const RightCol = styled.div`
-  width: 20%;
+  width: 10%;
 `;
 const Stats = styled.div`
   display: flex;
   justify-content: space-between;
+  width: 100%;
 `;
 
 const Dashboard = () => {

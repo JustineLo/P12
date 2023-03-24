@@ -20,6 +20,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: 30px;
+  box-sizing: border-box;
 `;
 
 const Header = styled.div`
@@ -61,12 +62,7 @@ const Activity = ({ activity }) => {
         </Legend>
       </Header>
       <ResponsiveContainer width="100%" height="100%">
-        <BarChart
-          width={730}
-          height={250}
-          data={activity}
-          margin={{ right: 0 }}
-        >
+        <BarChart data={activity} margin={{ right: 0 }}>
           <CartesianGrid
             strokeDasharray="2 2"
             horizontal={true}
