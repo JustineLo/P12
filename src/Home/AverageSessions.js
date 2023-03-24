@@ -65,8 +65,6 @@ const AverageSessions = ({ sessions }) => {
     <ChartContainer>
       <ResponsiveContainer width="100%" height="100%">
         <AreaChart
-          // width="100%"
-          // height="100%"
           data={sessions}
           margin={{ top: 30, bottom: 30, left: 0, right: 0 }}
         >
