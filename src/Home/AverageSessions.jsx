@@ -25,8 +25,8 @@ const ChartContainer = styled.div`
   border-radius: 5px;
   background-color: var(--primary);
   width: fit-content;
-  height: 50vh;
-  width: 33%;
+  height: 250px;
+  width: 30%;
 `;
 
 const AverageSessions = ({ sessions }) => {

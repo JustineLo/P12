@@ -37,9 +37,11 @@ const LeftCol = styled.div`
   display: flex;
   flex-direction: column;
   gap: 40px;
+  height: 100%;
 `;
 const RightCol = styled.div`
   width: 10%;
+  height: 100%;
 `;
 const Stats = styled.div`
   display: flex;

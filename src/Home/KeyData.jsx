@@ -12,6 +12,7 @@ const Container = styled.div`
   flex-direction: column;
   gap: 39px;
   width: 100%;
+  height: 100%;
 `;
 
 const KeyData = ({ data }) => {
