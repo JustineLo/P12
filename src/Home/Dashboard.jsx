@@ -34,6 +34,9 @@ const Body = styled.div`
 
 const LeftCol = styled.div`
   width: 85%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 `;
 const RightCol = styled.div`
   width: 10%;

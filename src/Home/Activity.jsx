@@ -16,7 +16,7 @@ const Container = styled.div`
   padding: 24px 26px 10px 26px;
   border-radius: 5px;
   width: 100%;
-  height: 250px;
+  height: 300px;
   display: flex;
   flex-direction: column;
   gap: 30px;
