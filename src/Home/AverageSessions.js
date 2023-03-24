@@ -4,6 +4,7 @@ import {
   Area,
   AreaChart,
   CartesianGrid,
+  ResponsiveContainer,
   Tooltip,
   XAxis,
   YAxis,
@@ -24,14 +25,8 @@ const ChartContainer = styled.div`
   border-radius: 5px;
   background-color: var(--primary);
   width: fit-content;
-  height: fit-content;
-  h3 {
-    font-weight: 500;
-    font-size: 15px;
-    color: white;
-    position: relative;
-    top: 50px;
-  }
+  height: 50vh;
+  width: 28%;
 `;
 
 const AverageSessions = ({ sessions }) => {
@@ -68,37 +63,41 @@ const AverageSessions = ({ sessions }) => {
 
   return (
     <ChartContainer>
-      <AreaChart
-        width={250}
-        height={250}
-        data={sessions}
-        margin={{ top: 30, bottom: 30, left: 0, right: 0 }}
-      >
-        <text y="50">Durée moyenne des sessions</text>
-        <XAxis
-          dataKey="day"
-          axisLine={false}
-          tickLine={false}
-          stroke="white"
-          tickFormatter={(value) => dayOfWeek[value - 1]}
-        />
-        <YAxis hide />
-        <CartesianGrid
-          strokeDasharray="3 3"
-          horizontal={false}
-          vertical={false}
-        />
-        <Tooltip content={<TooltipContent />} />
-        <Area
-          type="monotone"
-          dataKey="sessionLength"
-          stroke="white"
-          strokeWidth={2}
-          fillOpacity={1}
-          fill="none"
-          activeDot={<ActiveDot />}
-        />
-      </AreaChart>
+      <ResponsiveContainer width="100%" height="100%">
+        <AreaChart
+          // width="100%"
+          // height="100%"
+          data={sessions}
+          margin={{ top: 30, bottom: 30, left: 0, right: 0 }}
+        >
+          <text y="50" fill="white">
+            Durée moyenne des sessions
+          </text>
+          <XAxis
+            dataKey="day"
+            axisLine={false}
+            tickLine={false}
+            stroke="white"
+            tickFormatter={(value) => dayOfWeek[value - 1]}
+          />
+          <YAxis hide />
+          <CartesianGrid
+            strokeDasharray="3 3"
+            horizontal={false}
+            vertical={false}
+          />
+          <Tooltip content={<TooltipContent />} />
+          <Area
+            type="monotone"
+            dataKey="sessionLength"
+            stroke="white"
+            strokeWidth={2}
+            fillOpacity={1}
+            fill="none"
+            activeDot={<ActiveDot />}
+          />
+        </AreaChart>
+      </ResponsiveContainer>
     </ChartContainer>
   );
 };

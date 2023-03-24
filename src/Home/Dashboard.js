@@ -20,7 +20,7 @@ const Dashboard = () => {
   const [user, setUser] = useState({});
   const [activity, setActivity] = useState([]);
   const [sessions, setSessions] = useState([]);
-  const [kind, setKind] = useState([]);
+  const [kind, setKind] = useState({});
   const [performancesData, setPerformancesData] = useState([]);
   const [score, setScore] = useState(0);
   const { id } = useParams();
