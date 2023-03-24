@@ -7,10 +7,13 @@ import Sidebar from "./Sidebar";
 const Container = styled.div`
   display: flex;
   flex-direction: column;
+  width: 100vw;
+  box-sizing: border-box;
 `;
 
 const Content = styled.div`
   display: flex;
+  width: 100%;
 `;
 
 const Layout = ({ children }) => {

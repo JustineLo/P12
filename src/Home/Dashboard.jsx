@@ -22,18 +22,22 @@ const Container = styled.div`
   width: 100%;
   height: 100vh;
   padding: 40px 60px;
+  gap: 40px;
 `;
 
 const Body = styled.div`
   display: grid;
   column-gap: 2rem;
   grid-template-columns: 3fr 1fr;
-  width: 100%;
-  height: 100%;
+  width: 80vw;
 `;
 
-const LeftCol = styled.div``;
-const RightCol = styled.div``;
+const LeftCol = styled.div`
+  width: 90%;
+`;
+const RightCol = styled.div`
+  width: 20%;
+`;
 const Stats = styled.div`
   display: flex;
   justify-content: space-between;
@@ -91,7 +95,9 @@ const Dashboard = () => {
                 <Score score={score} />
               </Stats>
             </LeftCol>
-            <KeyData data={user} />
+            <RightCol>
+              <KeyData data={user} />
+            </RightCol>
           </Body>
         </Container>
       )}

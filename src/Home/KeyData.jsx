@@ -1,10 +1,18 @@
 import PropTypes from "prop-types";
 import React from "react";
+import styled from "styled-components";
 import apple from "../assets/apple.png";
 import cheeseburger from "../assets/cheeseburger.png";
 import chicken from "../assets/chicken.png";
 import energy from "../assets/energy.png";
 import Count from "../components/Count";
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 39px;
+  width: 100%;
+`;
 
 const KeyData = ({ data }) => {
   const counts = [
@@ -39,7 +47,7 @@ const KeyData = ({ data }) => {
   ];
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: "39px" }}>
+    <Container>
       {counts.map((count, index) => {
         return (
           <Count
@@ -52,7 +60,7 @@ const KeyData = ({ data }) => {
           />
         );
       })}
-    </div>
+    </Container>
   );
 };
 
