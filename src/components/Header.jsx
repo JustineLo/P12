@@ -4,7 +4,7 @@ import styled from "styled-components";
 const HeaderContainer = styled.header`
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 20px;
 
   h1 {
     font-weight: 600;
@@ -12,7 +12,7 @@ const HeaderContainer = styled.header`
   }
 
   h3 {
-    font-weight: 600;
+    font-weight: 500;
     font-size: 18px;
   }
 
