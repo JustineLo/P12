@@ -17,14 +17,25 @@ const ChartContainer = styled.div`
 `;
 
 const Performance = ({ kind, performancesData }) => {
+  const reversedPerformancesData = performancesData.reverse();
+  let reversedKind = [];
+  for (let i = Object.keys(kind).length; i > 0; i--) {
+    reversedKind.push(kind[i]);
+  }
+
   return (
     <ChartContainer>
       <ResponsiveContainer width="100%" height="100%">
-        <RadarChart outerRadius={90} data={performancesData} legend={false}>
-          <PolarGrid stroke="white" radialLines={false} width={100} />
+        <RadarChart
+          outerRadius={70}
+          data={reversedPerformancesData}
+          legend={false}
+        >
+          <PolarGrid stroke="white" radialLines={false} />
           <PolarAngleAxis
             dataKey="kind"
-            tickFormatter={(index) => kind[index]}
+            tickSize={8}
+            tickFormatter={(index) => reversedKind[index - 1]}
           />
           <Radar dataKey="kind" fill="var(--primary)" fillOpacity={0.6} />
         </RadarChart>
