@@ -1,3 +1,5 @@
+import UserModel from "./classes/UserModel";
+
 
 /**
  * 
@@ -7,24 +9,27 @@
 export async function fetchUserData(id) {
   return new Promise((resolve) => {
     resolve({
-      "data":
-      {
         "id":19,
         "userInfos":{
           "firstName":"Justine",
           "lastName":"Lo",
           "age":44
         },
-        "score":0.3,
+        "score":0.4,
         "keyData":{
-          "calorieCount":2500,
-          "proteinCount":90,
+          "calorieCount":3000,
+          "proteinCount":100,
           "carbohydrateCount":150,
           "lipidCount":120
         }
       }
-    });
-  });
+    );
+  }).then(
+    (data) => {
+      const user = new UserModel(data);
+      return user;
+    }
+  );
 }
 
 /**
@@ -35,30 +40,28 @@ export async function fetchUserData(id) {
 export async function fetchActivityData(id) {
   return new Promise((resolve) => {
     resolve({
-      "data":
-      {
         "userId":18,
         "sessions":
         [
           {
             "day":"2020-07-01",
             "kilogram":70,
-            "calories":240
+            "calories":140
           },
           {
             "day":"2020-07-02",
             "kilogram":69,
-            "calories":220
+            "calories":320
           },
           {
             "day":"2020-07-03",
             "kilogram":70,
-            "calories":280
+            "calories":250
           },
           {
             "day":"2020-07-04",
             "kilogram":70,
-            "calories":500
+            "calories":50
           },
           {
             "day":"2020-07-05",
@@ -77,7 +80,7 @@ export async function fetchActivityData(id) {
           }
         ]
       }
-    });
+    );
   });
 }
 
@@ -89,8 +92,6 @@ export async function fetchActivityData(id) {
 export async function fetchAverageSessionsData(id) {
   return new Promise((resolve) => {
     resolve({
-      "data":
-      {
         "userId":18,
         "sessions":[
           {
@@ -99,19 +100,19 @@ export async function fetchAverageSessionsData(id) {
           },
           {
             "day":2,
-          "sessionLength":40
+          "sessionLength":20
           },
           {
             "day":3,
-          "sessionLength":50
+          "sessionLength":20
         },
           {
             "day":4,
-          "sessionLength":30
+          "sessionLength":20
         },
           {
           "day":5,
-          "sessionLength":30
+          "sessionLength":10
         },
           {
             "day":6,
@@ -123,7 +124,7 @@ export async function fetchAverageSessionsData(id) {
           }
         ]
       }
-    });
+    );
   });
 }
 
@@ -135,8 +136,6 @@ export async function fetchAverageSessionsData(id) {
 export async function fetchPerformanceData(id) {
   return new Promise((resolve) => {
     resolve({
-      "data":
-      {
         "userId":18,
         "kind":
         {
@@ -150,19 +149,19 @@ export async function fetchPerformanceData(id) {
         "data":
         [
           {
-            "value":200,
+            "value":40,
             "kind":1
           },
           {
-            "value":240,
+            "value":40,
             "kind":2
           },
           {
-            "value":80,
+            "value":180,
             "kind":3
           },
           {
-            "value":80,
+            "value":280,
             "kind":4
           },
           {
@@ -175,6 +174,6 @@ export async function fetchPerformanceData(id) {
           }
         ]
       }
-    });
+    );
   });
 }
