@@ -9,10 +9,15 @@ import Count from "../components/Count";
 
 const Container = styled.div`
   display: flex;
-  flex-direction: column;
-  gap: 39px;
+  gap: 10px;
+  flex-wrap: wrap;
   width: 100%;
   height: 100%;
+
+  @media (min-width: 1330px) {
+    flex-direction: column;
+    gap: 39px;
+  }
 `;
 
 const KeyData = ({ data }) => {

@@ -24,24 +24,37 @@ const Container = styled.div`
   gap: 40px;
   width: 1050px;
   box-sizing: border-box;
+  overflow-y: scroll;
 `;
 
 const Body = styled.div`
   display: flex;
+  flex-direction: column;
   gap: 5%;
   width: 100%;
+
+  @media (min-width: 1330px) {
+    flex-direction: row;
+  }
 `;
 
 const LeftCol = styled.div`
-  width: 90%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 40px;
   height: 100%;
+
+  @media (min-width: 1330px) {
+    width: 90%;
+  }
 `;
 const RightCol = styled.div`
-  width: 10%;
+  width: 100%;
   height: 100%;
+  @media (min-width: 1330px) {
+    width: 10%;
+  }
 `;
 const Stats = styled.div`
   display: flex;
