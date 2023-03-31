@@ -1,3 +1,9 @@
+
+/**
+ * 
+ * @param { number } id 
+ */
+
 export async function fetchUserData(id) {
   return new Promise((resolve) => {
     resolve({
@@ -20,6 +26,11 @@ export async function fetchUserData(id) {
     });
   });
 }
+
+/**
+ * 
+ * @param { number } id 
+ */
 
 export async function fetchActivityData(id) {
   return new Promise((resolve) => {
@@ -70,6 +81,11 @@ export async function fetchActivityData(id) {
   });
 }
 
+/**
+ * 
+ * @param { number } id 
+ */
+
 export async function fetchAverageSessionsData(id) {
   return new Promise((resolve) => {
     resolve({
@@ -110,6 +126,11 @@ export async function fetchAverageSessionsData(id) {
     });
   });
 }
+
+/**
+ * 
+ * @param { number } id 
+ */
 
 export async function fetchPerformanceData(id) {
   return new Promise((resolve) => {

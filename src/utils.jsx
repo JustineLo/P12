@@ -4,6 +4,11 @@ import AverageSessionsModel from "./classes/AverageSessionsModel";
 import PerformanceModel from "./classes/PerformanceModel";
 import UserModel from "./classes/UserModel";
 
+/**
+ * 
+ * @param { number } id 
+ */
+
 export async function fetchUserData(id) {
   return axios
     .get(`http://localhost:3000/user/${id}/`)
@@ -12,6 +17,11 @@ export async function fetchUserData(id) {
       return user;
     });
 }
+
+/**
+ * 
+ * @param { number } id 
+ */
 
 export async function fetchActivityData(id) {
   return axios
@@ -22,6 +32,11 @@ export async function fetchActivityData(id) {
     });
 }
 
+/**
+ * 
+ * @param { number } id 
+ */
+
 export async function fetchAverageSessionsData(id) {
   return axios
     .get(`http://localhost:3000/user/${id}/average-sessions`)
@@ -30,6 +45,11 @@ export async function fetchAverageSessionsData(id) {
       return activity;
     });
 }
+
+/**
+ * 
+ * @param { number } id 
+ */
 
 export async function fetchPerformanceData(id) {
   return axios
