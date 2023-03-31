@@ -7,12 +7,25 @@ Welcome to the P12 Frontend Dashboard repository! This project is a frontend web
 Before you begin, make sure you have the following software installed on your system:
 
 - [Node.js](https://nodejs.org/en/download/) (v14.x or later)
+- [Yarn](https://yarnpkg.com/)
 - [npm](https://www.npmjs.com/get-npm) (v7.x or later)
 - [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) (v2.x or later)
 
 Additionally, you will need to set up and run the [P9 Backend Server](https://github.com/JustineLo/P9-front-end-dashboard) before you can launch the P12 Frontend Dashboard.
 
-## Installation
+## Running the Backend Server
+
+Before you can run the P12 Frontend Dashboard, you need to set up and run the P9 Backend Server. Follow the instructions below or in the [P9 Backend Server repository](https://github.com/JustineLo/P9-front-end-dashboard).
+
+### 2.2 Launching the backend server without Docker
+
+- Fork the repository
+- Clone it on your computer.
+- The `yarn` command will allow you to install the dependencies.
+- The `yarn dev` command will allow you to run the micro API.
+
+
+## Install the Frontend app
 
 1. Clone the P12 Frontend Dashboard repository:
 
