@@ -4,7 +4,7 @@ import {
   RadialBar,
   RadialBarChart,
   ResponsiveContainer,
-  Tooltip,
+  Tooltip
 } from "recharts";
 import styled from "styled-components";
 
@@ -30,16 +30,16 @@ const Score = ({ score }) => {
           startAngle={90}
           endAngle={90 + (dataScore[0].score * 360) / 100}
         >
-          <text y="30" x="24">
+          <text y="30" x="24" fontWeight="bold">
             Score
           </text>
-          <text y="110" x="150" fontWeight="bold" fontSize="26px">
+          <text y="110" x="90" fontWeight="bold" fontSize="26px">
             {dataScore[0].score}%
           </text>
-          <text y="140" x="145">
+          <text y="140" x="88">
             de votre
           </text>
-          <text y="160" x="148">
+          <text y="160" x="90">
             objectif
           </text>
           <RadialBar

@@ -7,7 +7,7 @@ import {
   ResponsiveContainer,
   Tooltip,
   XAxis,
-  YAxis,
+  YAxis
 } from "recharts";
 import styled from "styled-components";
 
@@ -24,9 +24,9 @@ const TooltipContainer = styled.div`
 const ChartContainer = styled.div`
   border-radius: 5px;
   background-color: var(--primary);
-  width: fit-content;
   height: 250px;
   width: 30%;
+  overflow: hidden;
 `;
 
 const AverageSessions = ({ sessions }) => {
@@ -66,17 +66,22 @@ const AverageSessions = ({ sessions }) => {
       <ResponsiveContainer width="100%" height="100%">
         <AreaChart
           data={sessions}
-          margin={{ top: 30, bottom: 30, left: 0, right: 0 }}
+          margin={{ top: 30, bottom: 30, left: 10, right: 10 }}
         >
-          <text y="50" fill="white">
-            Durée moyenne des sessions
+          <text y="50" x="20" fill="white">
+            Durée moyenne des
+          </text>
+          <text y="70" x="20" fill="white">
+            sessions
           </text>
           <XAxis
             dataKey="day"
             axisLine={false}
             tickLine={false}
             stroke="white"
-            tickFormatter={(value) => dayOfWeek[value - 1]}
+            tickFormatter={(value) => {
+              return dayOfWeek[value - 1]
+            }}
           />
           <YAxis hide />
           <CartesianGrid

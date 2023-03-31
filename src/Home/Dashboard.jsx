@@ -8,7 +8,7 @@ import {
   fetchActivityData,
   fetchAverageSessionsData,
   fetchPerformanceData,
-  fetchUserData,
+  fetchUserData
 } from "../utils";
 import Activity from "./Activity";
 import AverageSessions from "./AverageSessions";
@@ -22,7 +22,7 @@ const Container = styled.div`
   height: 100vh;
   padding: 40px 60px;
   gap: 40px;
-  width: 1000px;
+  width: 1050px;
   box-sizing: border-box;
 `;
 
@@ -33,7 +33,7 @@ const Body = styled.div`
 `;
 
 const LeftCol = styled.div`
-  width: 85%;
+  width: 90%;
   display: flex;
   flex-direction: column;
   gap: 40px;
