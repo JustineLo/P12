@@ -46,10 +46,21 @@ const AverageSessions = ({ sessions }) => {
   };
 
   const ActiveDot = (props) => {
-    const { cx } = props;
+    const { cx, cy } = props;
 
     return (
       <>
+        <circle
+          cx={cx}
+          cy={cy}
+          r="5"
+          fill="white"
+          />
+        <circle 
+          cx={cx}
+          cy={cy}
+          r="10"
+          fill="#ffffff8e" />
         <rect
           x={cx}
           y="0"
