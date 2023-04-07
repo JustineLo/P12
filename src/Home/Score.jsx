@@ -30,16 +30,16 @@ const Score = ({ score }) => {
           startAngle={90}
           endAngle={90 + (dataScore[0].score * 360) / 100}
         >
-          <text y="30" x="24" fontWeight="bold">
+          <text y="35" x="24" fontWeight="bold">
             Score
           </text>
-          <text y="110" x="90" fontWeight="bold" fontSize="26px">
+          <text y="45%" x="38%" fontWeight="bold" fontSize="26px">
             {dataScore[0].score}%
           </text>
-          <text y="140" x="88">
+          <text y="54%" x="36%">
             de votre
           </text>
-          <text y="160" x="90">
+          <text y="62%" x="37%">
             objectif
           </text>
           <RadialBar
