@@ -4,17 +4,19 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Header from "../components/Header";
 import Layout from "../layout/Layout";
-import {
-  fetchActivityData,
-  fetchAverageSessionsData,
-  fetchPerformanceData,
-  fetchUserData
-} from "../utils";
+import {API} from "../api"
 import Activity from "./Activity";
 import AverageSessions from "./AverageSessions";
 import KeyData from "./KeyData";
 import Performance from "./Performance";
 import Score from "./Score";
+
+const {
+  fetchActivityData,
+  fetchAverageSessionsData,
+  fetchPerformanceData,
+  fetchUserData
+} = API;
 
 const Container = styled.div`
   display: flex;
@@ -22,7 +24,7 @@ const Container = styled.div`
   height: 100vh;
   padding: 40px 60px;
   gap: 40px;
-  width: 1050px;
+  width: 100%;
   box-sizing: border-box;
   overflow-y: scroll;
 `;
@@ -47,6 +49,7 @@ const LeftCol = styled.div`
 
   @media (min-width: 1330px) {
     width: 90%;
+    max-width: 800px;
   }
 `;
 const RightCol = styled.div`

@@ -9,6 +9,7 @@ import Count from "../components/Count";
 
 const Container = styled.div`
   display: flex;
+  justify-content: space-between;
   gap: 10px;
   flex-wrap: wrap;
   width: 100%;
