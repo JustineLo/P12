@@ -1,3 +1,9 @@
+/**
+ * @param {Object} data 
+ * @param {number} data.userId 
+ * @param {Array<Object>} data.sessions 
+ */
+
 class ActivityModel {
   constructor(data) {
     this.userId = data.userId;
