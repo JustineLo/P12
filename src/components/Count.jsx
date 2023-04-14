@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Icon from "./Icon";
+import PropTypes from 'prop-types';
 
 const Container = styled.div`
   display: flex;
@@ -40,6 +41,15 @@ const Count = ({ icon, color, name, quantity, unit }) => {
       </Infos>
     </Container>
   );
+};
+
+
+Count.propTypes = {
+  icon: PropTypes.string,
+  color: PropTypes.string,
+  name: PropTypes.string,
+  quantity: PropTypes.number,
+  unit: PropTypes.string,
 };
 
 export default Count;

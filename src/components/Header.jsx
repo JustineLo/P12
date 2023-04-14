@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import PropTypes from 'prop-types';
 
 const HeaderContainer = styled.header`
   display: flex;
@@ -33,3 +34,7 @@ const Header = ({ name }) => {
 };
 
 export default Header;
+
+Header.propTypes = {
+  name: PropTypes.string,
+};

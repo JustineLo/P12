@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import PropTypes from 'prop-types';
 
 const IconContainer = styled.div`
   border-radius: 6px;
@@ -23,6 +24,12 @@ const Icon = ({ img, color, size }) => {
       </IconContainer>
     </>
   );
+};
+
+Icon.propTypes = {
+  img: PropTypes.string,
+  color: PropTypes.string,
+  size: PropTypes.string,
 };
 
 export default Icon;
