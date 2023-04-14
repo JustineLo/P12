@@ -53,3 +53,20 @@ npm start
 ```
 
 The application should now be running on http://localhost:3001. Open the link in your preferred web browser to access the dashboard.
+
+## Switching Between API and Mock Functions
+
+This project supports switching between the actual API functions and the mock functions for easier development and testing. To enable or disable the mock functions, follow these steps:
+
+1. Open the `.env` file located in the root of the project.
+
+2. Locate the `REACT_APP_MOCKACTIVE` variable. This variable is used to determine whether the application should use the mock functions or the actual API functions.
+
+3. Change the value of `REACT_APP_MOCKACTIVE` to `"true"` to enable the mock functions. To disable the mock functions and use the actual API functions, set the value to `"false"`.
+
+
+4. Save the changes in the `.env` file.
+
+5. Restart the development server for the changes to take effect.
+
+Now, the application will use the specified set of functions (either `utils.js` for actual API functions or `utilsMock.js` for mock functions) based on the value of `REACT_APP_MOCKACTIVE` in the `.env` file.
