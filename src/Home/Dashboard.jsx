@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Header from "../components/Header";
 import Layout from "../layout/Layout";
-import {API} from "../api"
+import { API } from "../api";
 import Activity from "./Activity";
 import AverageSessions from "./AverageSessions";
 import KeyData from "./KeyData";
@@ -15,7 +15,7 @@ const {
   fetchActivityData,
   fetchAverageSessionsData,
   fetchPerformanceData,
-  fetchUserData
+  fetchUserData,
 } = API;
 
 const Container = styled.div`
@@ -96,7 +96,7 @@ const Dashboard = () => {
         setErrorId(true);
       }
     })();
-  }, []);
+  }, [id]);
 
   return (
     <Layout>
