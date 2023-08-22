@@ -71,7 +71,6 @@ const Dashboard = () => {
   const [performancesData, setPerformancesData] = useState([]);
   const [score, setScore] = useState(0);
   const id = 19;
-  const [errorId, setErrorId] = useState(false);
 
   useEffect(() => {
     (async () => {
@@ -91,7 +90,7 @@ const Dashboard = () => {
         setKind(performanceData.kind);
         setPerformancesData(performanceData.data);
       } catch (error) {
-        setErrorId(true);
+        console.error(error);
       }
     })();
   }, [id]);
