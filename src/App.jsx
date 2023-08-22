@@ -5,8 +5,8 @@ import Homepage from "./Homepage";
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Homepage />} />
-      <Route path="/dashboard/:id" element={<Dashboard />} />
+      <Route path="/" element={<Dashboard />} />
+      {/* <Route path="/dashboard/:id" element={<Dashboard />} /> */}
       <Route path="*" element={<Homepage />} />
     </Routes>
   );

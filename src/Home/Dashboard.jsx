@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Header from "../components/Header";
@@ -72,7 +71,7 @@ const Dashboard = () => {
   const [kind, setKind] = useState({});
   const [performancesData, setPerformancesData] = useState([]);
   const [score, setScore] = useState(0);
-  const { id } = useParams();
+  const id = 19;
   const [errorId, setErrorId] = useState(false);
 
   useEffect(() => {
