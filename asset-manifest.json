@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/JustineLo/P12/static/css/main.d640fa9a.css",
+    "main.js": "/JustineLo/P12/static/js/main.4fd1630d.js",
+    "static/media/logo.svg": "/JustineLo/P12/static/media/logo.837414860efdf652f26ae7be654e06c5.svg",
+    "index.html": "/JustineLo/P12/index.html",
+    "main.d640fa9a.css.map": "/JustineLo/P12/static/css/main.d640fa9a.css.map",
+    "main.4fd1630d.js.map": "/JustineLo/P12/static/js/main.4fd1630d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d640fa9a.css",
+    "static/js/main.4fd1630d.js"
+  ]
+}
