@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import { ReactComponent as Logo } from "../assets/logo.svg";
 
@@ -16,10 +15,17 @@ const Navlinks = styled.div`
   display: flex;
   gap: 126px;
 
-  a {
+  button {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
     color: white;
-    text-decoration: none;
-    font-size: 24px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
   }
 `;
 
@@ -31,9 +37,7 @@ const Navbar = () => {
         <Logo alt="logo" />
         <Navlinks>
           {navlinks.map((link) => (
-            <a href="#" key={link}>
-              {link}
-            </a>
+            <button key={link}>{link}</button>
           ))}
         </Navlinks>
       </Container>
