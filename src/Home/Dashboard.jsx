@@ -90,7 +90,7 @@ const Dashboard = () => {
         setKind(performanceData.kind);
         setPerformancesData(performanceData.data);
       } catch (error) {
-        console.error(error);
+       console.error(error);
       }
     })();
   }, [id]);
