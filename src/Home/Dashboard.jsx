@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Header from "../components/Header";
 import Layout from "../layout/Layout";
@@ -99,29 +98,22 @@ const Dashboard = () => {
 
   return (
     <Layout>
-      {errorId ? (
-        <div style={{ display: "flex", flexDirection: "column" }}>
-          <p>Cet identifiant n'existe pas</p>
-          <Link to="/">Retour à l'accueil</Link>
-        </div>
-      ) : (
-        <Container>
-          <Header name={user.firstName} />
-          <Body>
-            <LeftCol>
-              <Activity activity={activity} />
-              <Stats>
-                <AverageSessions sessions={sessions} />
-                <Performance kind={kind} performancesData={performancesData} />
-                <Score score={score} />
-              </Stats>
-            </LeftCol>
-            <RightCol>
-              <KeyData data={user} />
-            </RightCol>
-          </Body>
-        </Container>
-      )}
+      <Container>
+        <Header name={user.firstName} />
+        <Body>
+          <LeftCol>
+            <Activity activity={activity} />
+            <Stats>
+              <AverageSessions sessions={sessions} />
+              <Performance kind={kind} performancesData={performancesData} />
+              <Score score={score} />
+            </Stats>
+          </LeftCol>
+          <RightCol>
+            <KeyData data={user} />
+          </RightCol>
+        </Body>
+      </Container>
     </Layout>
   );
 };
